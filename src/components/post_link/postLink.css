@@ -1,0 +1,26 @@
+.postWrap {
+    width:30em;
+    display: grid;
+    border: solid 1px;
+    grid-template-rows: max-content;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+
+.imagePlaceholder {
+    height:15em;   
+    display: grid;
+    align-items: center;
+}
+
+.postFooter {
+    border:solid 1px;
+
+    display: grid;
+    align-content: center;
+    padding:10px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  
+}
