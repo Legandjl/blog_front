@@ -1,0 +1,27 @@
+.content {
+    display: grid;
+    width:80vw;
+    padding-top: 4em;  
+    text-align: left;
+}
+
+.content img {
+    height:100%;
+    width:100px;
+}
+
+h1 {font-size: 2em;}
+h2 {
+    font-size: 1.8em;
+}
+h3 {font-size:initial;}
+
+hr {
+    background-color: grey;  
+
+}
+
+blockquote {
+    border-left: 5px solid #eee;
+    padding-left: 5px;
+}

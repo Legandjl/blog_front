@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "../home/Home";
 import Header from "../header/Header";
+import Content from "../content/Content";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path={"/"} element={<Home />} />
-        <Route path={"/post/:id"} element={<p>not implemented yet</p>} />
+        <Route path={"/post/:id"} element={<Content />} />
       </Routes>
     </div>
   );
