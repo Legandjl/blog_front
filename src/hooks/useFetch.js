@@ -4,7 +4,7 @@ const useFetch = (param) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const url = `http://localhost:3000${param}`;
-
+  console.log(data);
   const refresh = () => {
     setLoading(true);
   };
@@ -17,6 +17,7 @@ const useFetch = (param) => {
           throw new Error("Could not fetch the resource");
         }
         const jsonData = await data.json();
+
         setData(jsonData);
         setLoading(false);
       } catch (e) {

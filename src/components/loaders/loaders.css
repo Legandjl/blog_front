@@ -1,0 +1,9 @@
+.commentsLoader {
+    height:10em;
+    width:20em;
+
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    margin-left: 2em;
+}

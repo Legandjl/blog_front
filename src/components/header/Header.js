@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useShowHeader from "../hooks/useShowHeader";
+import useShowHeader from "../../hooks/useShowHeader";
 import "./header.css";
 
 const Header = () => {

@@ -3,7 +3,8 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "../home/Home";
 import Header from "../header/Header";
-import Content from "../content/Content";
+import Post from "../post/Post";
+import Footer from "../footer/Footer";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Header />
       <Routes>
         <Route path={"/"} element={<Home />} />
-        <Route path={"/post/:id"} element={<Content />} />
+        <Route path={"/post/:id"} element={<Post />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
