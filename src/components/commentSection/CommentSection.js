@@ -8,6 +8,10 @@ const CommentSection = (props) => {
   const [commentSubmitted, setCommentSubmitted] = useState(false);
   const commentEndRef = useRef(null);
 
+  const comments = props.comments.map((commemt) => {
+    return <Comment comment={commemt} />;
+  });
+
   //test
 
   useEffect(() => {
