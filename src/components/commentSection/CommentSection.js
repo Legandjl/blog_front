@@ -2,25 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import Comment from "../comment/Comment";
 import CommentSubmit from "../commentSubmit/CommentSubmit";
 import CommentsLoader from "../loaders/CommentsLoader";
+import { Link } from "react-scroll/modules";
 import "./commentSection.css";
+import { Events } from "react-scroll/modules";
+import { scrollSpy } from "react-scroll/modules";
+import { animateScroll } from "react-scroll/modules";
 
 const CommentSection = (props) => {
   const [commentSubmitted, setCommentSubmitted] = useState(false);
-  const commentEndRef = useRef(null);
 
   const comments = props.comments.map((commemt) => {
     return <Comment comment={commemt} />;
   });
-
-  //test
-
   useEffect(() => {
     if (commentSubmitted) {
-      commentEndRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-        inline: "nearest",
-      });
+      animateScroll.scrollToBottom();
     }
   }, [commentSubmitted, props.comments, props.end]);
 
@@ -29,13 +25,9 @@ const CommentSection = (props) => {
     setCommentSubmitted(true);
   };
 
-  const handleRefresh = () => {
-    console.log(comments.length);
-  };
-
   return (
     <div className={"commentSection"}>
-      {props.loading ? <CommentsLoader /> : comments}
+      {comments}
       {!props.endOfComments ? (
         <button className="loadMore" onClick={refreshComments}>
           load more
@@ -43,9 +35,8 @@ const CommentSection = (props) => {
       ) : (
         <p>End of comments</p>
       )}
+      {props.loading && <CommentsLoader />}
       {!props.loading && <CommentSubmit refresh={refreshComments} />}
-
-      <div className="end" ref={commentEndRef} />
     </div>
   );
 };
