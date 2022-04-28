@@ -16,6 +16,7 @@ const useComments = (param) => {
     const loadData = async () => {
       setStartedFetch(true);
       try {
+        console.log("fetching");
         const data = await fetch(url);
         if (!data.ok) {
           throw new Error("Could not fetch the resource");
@@ -29,6 +30,7 @@ const useComments = (param) => {
         } else {
           setEndOfComments(false);
         }
+
         setLoading(false);
         setStartedFetch(false);
       } catch (e) {

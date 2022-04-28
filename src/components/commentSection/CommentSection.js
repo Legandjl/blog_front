@@ -33,7 +33,7 @@ const CommentSection = (props) => {
 
   return (
     <div className={"commentSection"}>
-      {props.Commentloading ? <CommentsLoader /> : comments}
+      {props.loading ? <CommentsLoader /> : comments}
       {!props.endOfComments ? (
         <button className="loadMore" onClick={refreshComments}>
           load more
