@@ -8,3 +8,12 @@
     margin-left: 2em;
     margin-bottom: 2em;
 }
+.postLoader{ 
+    justify-self: center;
+    align-self: center;
+
+    height:100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}

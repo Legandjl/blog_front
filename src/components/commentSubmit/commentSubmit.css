@@ -16,12 +16,16 @@ textarea {
     resize: none;
     padding:5px;
     width:22.2em;
+outline:none;
       
   }
 
   .commentSubmit button {
+      margin-top: 5px;
+    
     border: none;
     width:6em;
+    height:2em;
 
     background-color:#1B1B1B;
     color:white;
@@ -40,5 +44,6 @@ textarea {
 
       justify-self: start;
       grid-gap: 10px;
+      margin-bottom: 2em;
 
   }

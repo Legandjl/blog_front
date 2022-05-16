@@ -1,27 +1,30 @@
-import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
-import remarkGfm from "remark-gfm";
-import "./post.css";
 import CommentSection from "../commentSection/CommentSection";
 import useComments from "../../hooks/useComments";
+import Markdown from "markdown-to-jsx";
+import useLoadData from "../../hooks/useLoadData";
+import "./post.css";
+import PostLoader from "../loaders/PostLoader";
 
 const Post = () => {
   const { id } = useParams();
 
-  const [loading, data, refresh] = useFetch(`/blog/${id}`);
+  const [loading, data] = useLoadData(`/blog/post/${id}`);
   const [loadingComments, commentData, commentRefresh, endOfComments] =
     useComments(`/blog/comments/${id}`);
 
   return (
     <div className={"content"}>
-      {!loading && (
-        <ReactMarkdown
-          children={data.post.content}
-          remarkPlugins={[remarkGfm]}
-          escapeHtml={false}
-        />
-      )}
+      <div
+        className="postcontent"
+        style={{
+          borderBottom:
+            commentData.length === 0 && "solid 1px rgba(0, 0, 0, 0.293)",
+        }}
+      >
+        {!loading && <Markdown>{data.post.content}</Markdown>}
+        {loading && <PostLoader />}
+      </div>
       {!loading && (
         <CommentSection
           comments={commentData}

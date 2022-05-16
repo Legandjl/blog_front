@@ -1,13 +1,23 @@
+
 .content {
     display: grid;
     width:80vw;
-    padding-top: 4em;  
+    padding-top: 3em;  
     text-align: left;
+
+    
 }
 
 .content img {
     height:100%;
     width:100px;
+}
+
+
+.postcontent {
+
+    text-align: left;
+    padding-bottom: 1em;
 }
 
 h1 {font-size: 2em;}

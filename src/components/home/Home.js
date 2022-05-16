@@ -1,9 +1,10 @@
-import useFetch from "../../hooks/useFetch";
+import useLoadData from "../../hooks/useLoadData";
+
 import PostLink from "../post_link/PostLink";
 import "./home.css";
 
 const Home = () => {
-  const [loading, data, refresh] = useFetch("/blog");
+  const [loading, data, refresh] = useLoadData("/blog/0");
   let posts;
   if (!loading) {
     posts = data.map((dataItem) => {

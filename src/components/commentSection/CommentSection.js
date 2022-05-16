@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Comment from "../comment/Comment";
 import CommentSubmit from "../commentSubmit/CommentSubmit";
 import CommentsLoader from "../loaders/CommentsLoader";
-import { Link } from "react-scroll/modules";
+
 import "./commentSection.css";
-import { Events } from "react-scroll/modules";
-import { scrollSpy } from "react-scroll/modules";
+
 import { animateScroll } from "react-scroll/modules";
 
 const CommentSection = (props) => {
@@ -29,9 +28,13 @@ const CommentSection = (props) => {
     <div className={"commentSection"}>
       {comments}
       {!props.endOfComments ? (
-        <button className="loadMore" onClick={refreshComments}>
+        <p className="loadMore" onClick={refreshComments}>
           load more
-        </button>
+        </p>
+      ) : comments.length === 0 ? (
+        <p style={{ marginTop: "5px", marginBottom: "5px" }}>
+          No comments to show
+        </p>
       ) : (
         <p>End of comments</p>
       )}

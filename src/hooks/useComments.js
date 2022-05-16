@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 
+import useFetchData from "./useFetchData";
+
 const useComments = (param) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [startedFetch, setStartedFetch] = useState(false);
+
   const [endOfComments, setEndOfComments] = useState(false);
 
-  const url = `http://localhost:3000${param}/${data.length}`;
-
-  //test new repo
+  const url = `${param}/${data.length}`;
+  const [fetchData, fetchInProgress] = useFetchData();
 
   const refresh = () => {
     setLoading(true);
@@ -16,33 +17,21 @@ const useComments = (param) => {
 
   useEffect(() => {
     const loadData = async () => {
-      setStartedFetch(true);
-      try {
-        console.log("fetching");
-        const data = await fetch(url);
-        if (!data.ok) {
-          throw new Error("Could not fetch the resource");
-        }
-        const jsonData = await data.json();
-        setData((prev) => {
-          return [...prev, ...jsonData];
-        });
-        if (jsonData.length <= 1) {
-          setEndOfComments(true);
-        } else {
-          setEndOfComments(false);
-        }
-
-        setLoading(false);
-        setStartedFetch(false);
-      } catch (e) {
-        console.log(e);
+      const data = await fetchData(url, {});
+      setData((prev) => {
+        return [...prev, ...data];
+      });
+      if (data.length < 5) {
+        setEndOfComments(true);
+      } else {
+        setEndOfComments(false);
       }
+      setLoading(false);
     };
-    if (loading && !startedFetch) {
+    if (loading && !fetchInProgress) {
       loadData();
     }
-  }, [loading, startedFetch, url]);
+  }, [fetchData, fetchInProgress, loading, url]);
 
   return [loading, data, refresh, endOfComments];
 };
