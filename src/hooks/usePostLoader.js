@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 import useFetchData from "./useFetchData";
 
-const useLoadData = (param) => {
+const usePostLoader = (param) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+
   const [fetchData, fetchInProgress] = useFetchData();
 
   const refresh = () => {
@@ -19,6 +20,7 @@ const useLoadData = (param) => {
         },
         mode: "cors",
       });
+
       setData(jsonData);
       setLoading(false);
     };
@@ -30,4 +32,4 @@ const useLoadData = (param) => {
   return [loading, data, refresh];
 };
 
-export default useLoadData;
+export default usePostLoader;

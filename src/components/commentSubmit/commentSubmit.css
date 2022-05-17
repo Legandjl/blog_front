@@ -10,6 +10,7 @@
 .commentSubmit input[type="text"] {
     width:15em;   
     padding:5px;
+    outline:none;
 }
 
 textarea {

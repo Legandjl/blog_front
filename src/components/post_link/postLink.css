@@ -1,20 +1,20 @@
 .postWrap {
     width:30em;
     display: grid;
-    border: solid 1px;
+
     grid-template-rows: max-content;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height:15em;
+    display: grid;
+    align-items: center;
+    align-content: center;
   }
   
 
-.imagePlaceholder {
-    height:15em;   
-    display: grid;
-    align-items: center;
-}
 
-.postFooter {
-    border:solid 1px;
+
+.postDetail {
+
 
     display: grid;
     align-content: center;

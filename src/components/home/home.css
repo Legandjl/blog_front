@@ -8,3 +8,9 @@
     padding-right: 2em;
     margin-bottom: 3em;
 }
+.homeButton {
+    grid-column: 1/-1;
+    height:2em;
+    width:6em;
+    justify-self: center;
+}

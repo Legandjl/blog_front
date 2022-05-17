@@ -2,17 +2,18 @@ import { useParams } from "react-router-dom";
 import CommentSection from "../commentSection/CommentSection";
 import useComments from "../../hooks/useComments";
 import Markdown from "markdown-to-jsx";
-import useLoadData from "../../hooks/useLoadData";
+
 import "./post.css";
 import PostLoader from "../loaders/PostLoader";
+import usePostLoader from "../../hooks/usePostLoader";
 
 const Post = () => {
   const { id } = useParams();
 
-  const [loading, data] = useLoadData(`/blog/post/${id}`);
+  const [loading, data] = usePostLoader(`/blog/post/${id}`);
   const [loadingComments, commentData, commentRefresh, endOfComments] =
     useComments(`/blog/comments/${id}`);
-
+  console.log(data);
   return (
     <div className={"content"}>
       <div
