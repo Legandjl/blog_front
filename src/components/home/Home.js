@@ -3,6 +3,8 @@ import useFetchData from "../../hooks/useFetchData";
 import useLoadData from "../../hooks/useHomeLoader";
 import HomeLoader from "../loaders/HomeLoader";
 
+import { animateScroll } from "react-scroll/modules";
+
 import PostLink from "../post_link/PostLink";
 import "./home.css";
 
@@ -11,7 +13,6 @@ const Home = () => {
   const [loading, data, refresh] = useLoadData(`/blog/${toSkip}`);
   const [fetchData, fetching] = useFetchData();
   const [showButton, setShowButton] = useState(true);
-  console.log(toSkip);
 
   useEffect(() => {
     const checkTotalPosts = async () => {
@@ -34,18 +35,26 @@ const Home = () => {
   ) : (
     <div className="homeWrap">
       {posts}
-      {showButton && (
+      {showButton ? (
         <button
           onClick={() => {
             setToSkip((prev) => {
               return prev + 10;
             });
             refresh();
+            animateScroll.scrollToBottom();
           }}
           className="homeButton"
         >
           More
         </button>
+      ) : (
+        <p
+          className="postEnd"
+          style={{ justifySelf: "center", gridColumn: "1/-1" }}
+        >
+          No more posts to show
+        </p>
       )}
     </div>
   );

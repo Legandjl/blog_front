@@ -20,7 +20,7 @@ const useHomeLoader = (param) => {
         },
         mode: "cors",
       });
-      console.log(jsonData);
+
       setData((prev) => {
         return [...prev, ...jsonData];
       });

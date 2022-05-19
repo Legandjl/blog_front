@@ -24,3 +24,9 @@
     border-bottom: none;
   
 }
+
+.postDetail a {
+ 
+    color:black;
+    cursor: pointer;
+}

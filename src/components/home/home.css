@@ -8,9 +8,21 @@
     padding-right: 2em;
     margin-bottom: 3em;
 }
-.homeButton {
+.homeButton {  
+    height: 2em;  
+    width:5em;
+    border: none;
+    background-color:#1B1B1B;
+    color:white;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
+.postEnd, .homeButton {
     grid-column: 1/-1;
-    height:2em;
-    width:6em;
+    margin-top: 3.5em;
     justify-self: center;
+
 }

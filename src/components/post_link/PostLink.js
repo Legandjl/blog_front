@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./postLink.css";
 
 const PostLink = (props) => {
-  console.log(props.dataItem._id);
   return (
     <div className="postWrap">
       <div className="postDetail">

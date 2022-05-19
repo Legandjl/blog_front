@@ -6,7 +6,6 @@ const useFetchData = () => {
   const nav = useNavigate();
 
   const fetchData = async (params, options) => {
-    console.log("called");
     try {
       const url = `https://intense-chamber-01379.herokuapp.com${params}`;
       setLoading(true);
@@ -20,7 +19,6 @@ const useFetchData = () => {
       }
 
       if (data.status === 404) {
-        console.log(data.error);
         setLoading(false);
         nav(`/404`, { replace: true });
         return;

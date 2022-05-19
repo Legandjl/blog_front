@@ -13,7 +13,7 @@ const Post = () => {
   const [loading, data] = usePostLoader(`/blog/post/${id}`);
   const [loadingComments, commentData, commentRefresh, endOfComments] =
     useComments(`/blog/comments/${id}`);
-  console.log(data);
+
   return (
     <div className={"content"}>
       <div
