@@ -1,4 +1,4 @@
-# Description
+## Description
 
 This app was created as a learning exercise to gain experience with RESTFUL development, in this case integrating a React frontend and an Express/Node backend.
 
@@ -16,7 +16,7 @@ The backend of this application can be viewed here:
 
 https://github.com/Legandjl/blog
 
-And the standard admin frontend of the blog can be viewed here:
+And the admin frontend of the blog can be viewed here:
 
 https://legandjl.github.io/blog_admin/
 
