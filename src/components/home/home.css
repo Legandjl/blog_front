@@ -24,5 +24,8 @@
     grid-column: 1/-1;
     margin-top: 3.5em;
     justify-self: center;
+    display: grid;
+    align-items: end;
+    align-self: flex-end;
 
 }

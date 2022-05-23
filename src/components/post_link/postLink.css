@@ -1,7 +1,6 @@
 .postWrap {
     width:30em;
     display: grid;
-
     grid-template-rows: max-content;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     height:15em;
@@ -11,22 +10,20 @@
   }
   
 
-
-
 .postDetail {
-
-
     display: grid;
     align-content: center;
     padding:10px;
     border-left: none;
     border-right: none;
-    border-bottom: none;
-  
+    border-bottom: none;  
 }
 
-.postDetail a {
- 
+.postDetail a { 
     color:black;
     cursor: pointer;
+}
+
+.postlinkDate {
+    font-size: 0.9em;
 }

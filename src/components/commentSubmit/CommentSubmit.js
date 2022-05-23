@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
+import useFetchData from "../../hooks/useFetchData";
 import "./commentSubmit.css";
 
 const initialFormState = {
@@ -17,6 +18,7 @@ const reducer = (state, action) => {
 const CommentSubmit = (props) => {
   const [state, dispatch] = useReducer(reducer, initialFormState);
   const [submitting, setSubmitting] = useState(false);
+  const [fetchData] = useFetchData();
   const { id } = useParams();
 
   const handleChange = (e) => {
@@ -25,7 +27,7 @@ const CommentSubmit = (props) => {
 
   const handleSubmit = async () => {
     setSubmitting(true);
-    await fetch(`http://localhost:3000/blog/${id}`, {
+    await fetchData(`/blog/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       mode: "cors",
