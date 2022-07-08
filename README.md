@@ -25,3 +25,5 @@ This application and the admin portal both use the same backend.
 ## Thoughts on the process
 
 I enjoyed working on this application and have found that I prefer developing in this way as opposed to following the MVC pattern. I found it intuitive to have a clear separation of concerns of the frontend and the backend, and enjoyed jumping between the two and tweaking things. I feel I now have a solid grasp on the fundementals of developing applications in this way, and look forwards to building on this knowledge going forwards.
+
+Live demo: https://legandjl.github.io/blog_front/
